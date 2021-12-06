@@ -1,0 +1,18 @@
+show databases;
+create database trial;
+use trial;
+show tables;
+create table patient(id int,ht int,wt int,med_history varchar(50),foreign key(id) references person(id));
+create table doctor(id int,lic_no int,reg_no int,experience int,degree varchar(30),spltion varchar(30),timing varchar(30),fee int,foreign key(id) references person(id));
+create table person(id int auto_increment,prof varchar(11),usrname varchar(25),addr varchar(30),emailid varchar(30),id_p int(13),gender varchar(10),dob date,phno int,pswd1 varchar(25),pswd2 varchar(25),primary key(id));
+create table receptionist(id int,wrk_hrs int,salary float,foreign key(id) references person(id));
+create table appoint(id int,usrname varchar(25),doctor varchar(25),gender varchar(25),phnno int,emailid varchar(30),v_dt date,v_time varchar(20),foreign key(id) references person(id));
+select * from doctor;
+desc receptionist;
+create table bill(bill_id int auto_increment,id int,doc_name varchar(25),bill_dt date,diag varchar(50),amt int,tax int,total_amt int,primary key(bill_id),foreign key(id) references person(id));
+select * from receptionist;
+select * from patient;
+truncate table person;
+drop table receptionist;
+drop table bill;
+select * from bill;

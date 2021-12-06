@@ -1,0 +1,117 @@
+﻿{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Free Bootstrap Invoice</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="{% static 'css_bill/bootstrap.css' %}" rel="stylesheet" />
+	  <!-- CUSTOM STYLE  -->
+    <link href="{% static 'css_bill/custom-style.css' %}" rel="stylesheet" />
+    <!-- GOOGLE FONTS -->
+    <link href="{% static 'http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' %}" rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+ <div class="container">
+     
+      <div class="row pad-top-botm ">
+         <div class="col-lg-6 col-md-6 col-sm-6 ">
+            <img src="{% static 'img_bill/logo.png' %}" style="width: 175px;height: 125px;" /> 
+         </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            
+               <strong>Treatify</strong>
+              <br />
+                  <i>Address :</i> 245/908 , New York Lane,
+              <br />
+                  Forth Street , Deumark,
+              <br />
+                  United States.
+              
+         </div>
+     </div>
+     <div  class="row text-center contact-info">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+             <hr />
+             <span>
+                 <strong>Email : </strong> rrsspitch@gmail.com
+             </span>
+             <span>
+                 <strong>Call : </strong>  +95 - 890- 789- 9087 
+             </span>
+              <span>
+                 <strong>Fax : </strong>  +012340-908- 890 
+             </span>
+             <hr />
+         </div>
+     </div>
+     <div  class="row pad-top-botm client-info">
+         <div class="col-lg-6 col-md-6 col-sm-6">
+         <h4>  <strong>Client Information</strong></h4>
+           <strong>Name:{{usrname}}</strong>
+           <br>
+             <b>Call :</b> {{phno}}
+              <br />
+             <b>E-mail :</b>{{emailid}} 
+         </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            
+               <h4>  <strong>Payment Details </strong></h4>
+            
+               Bill Date :  {{date}}
+               <br>
+               Bill ID : {{bill_id}}
+               <br>
+               Doctor's name :  {{doc}}
+               
+              <br />
+            
+         </div>
+     </div>
+     <strong>Diagnosis/Medicines</strong> 
+     <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+           <div class="table-responsive">
+              
+            <textarea rows="5" cols="100">
+                    {{diag}}
+            </textarea>                  
+                            
+            </div>
+             <hr />
+             <div class="ttl-amts">
+               <h5>  Total Amount : {{amt}} Rs </h5>
+             </div>
+             <hr />
+              <div class="ttl-amts">
+                  <h5>  Tax : by 10 % on bill </h5>
+             </div>
+             <hr />
+              <div class="ttl-amts">
+                  <h4> <strong>Bill Amount : {{tot}} Rs</strong> </h4>
+             </div>
+         </div>
+     </div>
+      <div class="row">
+         </div>
+      <div class="row pad-top-botm">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+             <hr />
+             <a href="#" class="btn btn-primary btn-lg" >Print Invoice</a>
+             &nbsp;&nbsp;&nbsp;
+              <a href="#" class="btn btn-success btn-lg" >Download In Pdf</a>
+
+             </div>
+         </div>
+ </div>
+
+</body>
+</html>

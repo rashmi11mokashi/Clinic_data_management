@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create bills</title>
+    <link rel="stylesheet" href="{% static 'css/u_bill.css' %}">
+  </head>
+  <body>
+    <form method="POST" class="myform" name="myForm">
+            {% csrf_token %}
+            <br><br><br><br><br><br>
+        Enter patient's username:<input type="text" name="usrname" class="mytext">
+        <br><br>
+        Enter Diagnosis/Medicines:<br><br>
+        <textarea name="diag" rows="7" cols="50" class="mytext"> </textarea>  
+        <br><br>
+        
+        {% if result is -1 %}
+        <script>
+          alert("ERROR!");
+        </script>
+          {% endif %}
+        <button type="submit">OKAY</button>
+    </form>
+    
+  </body>
+</html>
+
